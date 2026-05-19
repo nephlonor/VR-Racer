@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>VR-Racer — iPhone LiDAR AR Driving</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="landing">
+      <h1>VR-Racer</h1>
+      <p class="tagline">Drive a virtual car around your real room. Crash into your real walls.</p>
+
+      <div class="card">
+        <h2>Before you start (iPhone 15 Pro)</h2>
+        <ol>
+          <li>Open <b>Settings → Apps → Safari → Advanced → Feature Flags</b>.</li>
+          <li>Turn on <b>WebXR Device API</b>.</li>
+          <li>Return here and tap <b>Start AR</b>.</li>
+        </ol>
+        <p class="muted">LiDAR is used implicitly by ARKit to detect walls and the floor — accuracy is best on iPhone Pro models.</p>
+      </div>
+
+      <button id="start-btn">Start AR</button>
+      <p id="support-msg" class="muted"></p>
+    </div>
+
+    <div id="overlay" class="hidden">
+      <div id="hint" class="hint">Pan your phone around the room to scan walls and floor…</div>
+      <button id="place-btn" class="hidden">Place car here</button>
+      <div id="joystick" class="hidden">
+        <div id="joystick-knob"></div>
+      </div>
+      <button id="throttle-btn" class="hidden">GO</button>
+      <button id="brake-btn" class="hidden">BRAKE</button>
+      <div id="crash" class="hidden">
+        <div class="crash-inner">
+          <h2>CRASH!</h2>
+          <button id="reset-btn">Reset car</button>
+        </div>
+      </div>
+      <button id="exit-btn" class="hidden">×</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
