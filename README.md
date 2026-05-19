@@ -15,10 +15,15 @@ your real walls (LiDAR-assisted via ARKit) and crashes when it hits one.
 
 ## iPhone setup (one time)
 
-1. **Settings → Apps → Safari → Advanced → Feature Flags → WebXR Device API**
-   — turn on.
-2. The page must be served over **HTTPS** (Vite's dev server and GitHub
-   Pages both qualify).
+Mobile Safari does not ship WebXR. Use **Variant Launch** (free, App
+Store) as a bridge — it runs the page in a WebView that exposes ARKit's
+`immersive-ar` session, hit-test, and plane-detection to the page,
+LiDAR-assisted on iPhone Pro models.
+
+1. Install **Variant Launch** from the App Store.
+2. Open it and paste the page URL (e.g. https://nephlonor.github.io/VR-Racer/).
+3. The page must be served over **HTTPS** — GitHub Pages and Vite's dev
+   server both qualify.
 
 ## Run locally
 
